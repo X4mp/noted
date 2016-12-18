@@ -17,6 +17,8 @@ served as json to the frontend which uses 'Passport' for user authentication and
 persistent storage for user credentials and task items.
 
 # Install
+Install mongodb from package-manager
+´´´npm install -g express express-generator passport jquery´´´
 
 # Usage
 
