@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title My notes
+  body
+    #title
+      h1 Notekeeping made great again!
+    #content
+      table
+        thead
+          tr
+            th
+            th Notes
+            th shared with
+        tbody
+          for note in notes
+            tr
+              td 
+                input(type="checkbox", name="done")
+              td= note
+              td
+                | zippy
