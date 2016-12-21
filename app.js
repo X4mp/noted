@@ -12,6 +12,25 @@ var notes = require('./routes/notes');
 
 var url = 'mongodb://localhost:54321/noted';
 
+mongo.connect(url, function(err, db) {
+  if(err) 
+    throw err;
+
+  var collection = db.collection('notes');
+  var note2 = {note: 'note2'};
+  collection.insert( note2, function(err, result) {
+    if(err)
+    {
+      console.log(err);
+    } else {
+      console.log('inserted');
+    }
+
+    db.close();
+
+  });
+});
+
 var app = express();
 
 // view engine setup
@@ -29,6 +48,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/notes', notes);
+app.post('/add', function(req,res){
+    console.log(req.body);
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

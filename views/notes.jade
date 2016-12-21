@@ -13,6 +13,11 @@ html
             th Notes
             th shared with
         tbody
+          div
+            form(action="/notes/add", method="post")
+              label(for="note-input") New note
+                input(id="note-input", type="text", value="", name="note")
+                input(type="submit")
           for note in notes
             tr
               td 
