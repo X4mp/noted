@@ -13,7 +13,7 @@ var notes = require('./routes/notes');
 var url = 'mongodb://localhost:54321/noted';
 
 mongo.connect(url, function(err, db) {
-  if(err) 
+  if(err)
     throw err;
 
   var collection = db.collection('notes');
@@ -47,10 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/notes', notes);
-app.post('/add', function(req,res){
-    console.log(req.body);
-})
+app.use('/notes', notes); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
