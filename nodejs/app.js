@@ -12,24 +12,24 @@ var notes = require('./routes/notes');
 
 var url = 'mongodb://localhost:54321/noted';
 
-mongo.connect(url, function(err, db) {
-  if(err)
-    throw err;
-
-  var collection = db.collection('notes');
-  var note2 = {note: 'note2'};
-  collection.insert( note2, function(err, result) {
-    if(err)
-    {
-      console.log(err);
-    } else {
-      console.log('inserted');
-    }
-
-    db.close();
-
-  });
-});
+//mongo.connect(url, function(err, db) {
+//  if(err)
+//    throw err;
+//
+//  var collection = db.collection('notes');
+//  var note2 = {note: 'note2'};
+//  collection.insert( note2, function(err, result) {
+//    if(err)
+//    {
+//      console.log(err);
+//    } else {
+//      console.log('inserted');
+//    }
+//
+//    db.close();
+//
+//  });
+//});
 
 var app = express();
 
