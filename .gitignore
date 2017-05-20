@@ -1,0 +1,5 @@
+nodejs/bin/
+nodejs/db/
+nodejs/node_modules/
+nodejs/npm-debug.log
+
