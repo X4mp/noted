@@ -42,7 +42,7 @@ jobs:
 
     - name: 'debug'
       run: |-
-        ehco $PROJECT_ID ${{ env.PROJECT_ID }} ${{ secrets.GKE_PROJECT }}
+        echo $PROJECT_ID ${{ env.PROJECT_ID }} ${{ secrets.GKE_PROJECT }}
 
     # Configure Workload Identity Federation and generate an access token.
     - id: 'auth'
