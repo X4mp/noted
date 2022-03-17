@@ -40,10 +40,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: 'debug'
-      run: |-
-        echo $PROJECT_ID ${{ env.PROJECT_ID }} ${{ secrets.GKE_PROJECT }}
-
     # Configure Workload Identity Federation and generate an access token.
     - id: 'auth'
       name: 'Authenticate to Google Cloud'
@@ -51,7 +47,7 @@ jobs:
       with:
         token_format: 'access_token'
         workload_identity_provider: 'projects/648378086252/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
-        service_account: 'my-service-account@$PROJECT_ID.iam.gserviceaccount.com'
+        service_account: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
 
     # Alternative option - authentication via credentials json
     # - id: 'auth'
