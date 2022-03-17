@@ -40,6 +40,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: 'debug'
+      run: |-
+        ehco $PROJECT_ID ${{ env.PROJECT_ID }} ${{ secrets.GKE_PROJECT }}
+
     # Configure Workload Identity Federation and generate an access token.
     - id: 'auth'
       name: 'Authenticate to Google Cloud'
