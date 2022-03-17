@@ -35,7 +35,7 @@ spec:
       - name: noted
         image: LOCATION-docker.pkg.dev/PROJECT_ID/IMAGE:TAG
         ports:
-        - containerPort: 5000
+        - containerPort: 8080
         resources:
           requests:
             cpu: 100m
